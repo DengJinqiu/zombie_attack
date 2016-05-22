@@ -17,7 +17,7 @@ public class ModelViewScreenTrans {
 	private static final int GAME_FRAME_HEIGHT = GameModel.getGameFrameHeight();
 
 	/** The width of the game in the view */
-	private static final int GAME_IN_VIEW_WIDTH = 760;
+	private static final int GAME_IN_VIEW_WIDTH = GAME_FRAME_WIDTH;
 	/** The height of the game in the view */
 	private static final int GAME_IN_VIEW_HEIGHT = GAME_FRAME_HEIGHT;
 	/** The left top position of the game in the view */

@@ -48,6 +48,8 @@ public class MainMenu extends Menu<MainMenu.ViewComponentTypes> {
 						R.drawable.main_menu_music_off_button,
 						R.drawable.main_menu_music_off_button_down, new PointF(
 								48, 48)));
+
+		setBlackBackground();
 	}
 
 	@Override

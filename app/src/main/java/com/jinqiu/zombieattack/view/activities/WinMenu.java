@@ -41,5 +41,4 @@ public class WinMenu extends Menu<WinMenu.ViewComponentTypes> {
 			}
 		}, 2000);
 	}
-
 }

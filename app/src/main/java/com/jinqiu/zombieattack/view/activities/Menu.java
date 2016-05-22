@@ -3,12 +3,14 @@ package com.jinqiu.zombieattack.view.activities;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.Display;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
+import com.jinqiu.zombieattack.R;
 import com.jinqiu.zombieattack.view.attached.BitmapManager;
 import com.jinqiu.zombieattack.view.attached.ModelViewScreenTrans;
 import com.jinqiu.zombieattack.view.component.ViewComponent;
@@ -42,6 +44,7 @@ public abstract class Menu<K> extends Activity {
 
 		initializeViewComponentManager();
 		this.addContentView(viewComponentManager, p);
+
 //		Log.d("on menu create", "end");
 	}
 
@@ -69,4 +72,7 @@ public abstract class Menu<K> extends Activity {
 		return viewComponentManager;
 	}
 
+    protected void setBlackBackground() {
+        viewComponentManager.getRootView().setBackgroundColor(ContextCompat.getColor(this, android.R.color.black));
+    }
 }

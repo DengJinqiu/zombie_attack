@@ -66,7 +66,16 @@ public class GamePlay extends Menu<GamePlay.ViewComponentTypes> {
 
 	/** The view component in this game play screen */
 	public static enum ViewComponentTypes {
-		GAME_PLAY_BACKGROUND, GAME_PLAY_PAUSE_BUTTON, GAME_PLAY_MUSIC_BUTTON, GAME_PLAY_PROCESSING_BAR, GAME_PLAY_BOULDER_1, GAME_PLAY_BOULDER_2, GAME_PLAY_BOULDER_3, GAME_PLAY_SCIENTIST_1, GAME_PLAY_SCIENTIST_2, GAME_PLAY_SCIENTIST_3
+		GAME_PLAY_BACKGROUND,
+        GAME_PLAY_PAUSE_BUTTON,
+        GAME_PLAY_MUSIC_BUTTON,
+        GAME_PLAY_PROCESSING_BAR,
+        GAME_PLAY_BOULDER_1,
+        GAME_PLAY_BOULDER_2,
+        GAME_PLAY_BOULDER_3,
+        GAME_PLAY_SCIENTIST_1,
+        GAME_PLAY_SCIENTIST_2,
+        GAME_PLAY_SCIENTIST_3
 	};
 
 	@Override
@@ -107,7 +116,8 @@ public class GamePlay extends Menu<GamePlay.ViewComponentTypes> {
 				R.drawable.game_play_background, new PointF(427, 240)));
 
 		addViewComponent(ViewComponentTypes.GAME_PLAY_PAUSE_BUTTON, new Button(
-				R.drawable.game_play_pause, R.drawable.game_play_pause_down,
+				R.drawable.game_play_pause,
+				R.drawable.game_play_pause_down,
 				new PointF(26, 30)));
 
 		addViewComponent(
@@ -121,6 +131,8 @@ public class GamePlay extends Menu<GamePlay.ViewComponentTypes> {
 		addViewComponent(ViewComponentTypes.GAME_PLAY_PROCESSING_BAR,
 				new ProcessingBar(24, 480, new PointF(854, 480),
 						R.drawable.game_play_processing_bar));
+
+        viewComponentManager.getRootView().setBackgroundColor(getResources().getColor(android.R.color.black));
 
 		// add zombie counter
 		zombieNumCounter = new NumberCounter(new PointF(815, 60));
@@ -138,6 +150,8 @@ public class GamePlay extends Menu<GamePlay.ViewComponentTypes> {
 		// Motion sensor
 		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
+        setBlackBackground();
+
 		// keep screen on
 //		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -150,6 +164,11 @@ public class GamePlay extends Menu<GamePlay.ViewComponentTypes> {
 
 		unregisterReceiver(broadcastReceiver);
 		sensorManager.unregisterListener(sensorEventListenerImpl);
+
+        Intent intent = new Intent();
+        intent.setClass(GamePlay.this, MainMenu.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
 
 		super.onStop();
 	}

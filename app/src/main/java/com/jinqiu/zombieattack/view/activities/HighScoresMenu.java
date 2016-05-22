@@ -31,6 +31,8 @@ public class HighScoresMenu extends Menu<HighScoresMenu.ViewComponentTypes> {
 				new Button(R.drawable.pause_menu_return_main_menu_button,
 						R.drawable.pause_menu_return_main_menu_button_down,
 						new PointF(427, 442)));
+
+		setBlackBackground();
 	}
 
 	@Override

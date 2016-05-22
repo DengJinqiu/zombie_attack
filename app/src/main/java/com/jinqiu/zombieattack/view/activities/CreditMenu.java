@@ -3,6 +3,7 @@ package com.jinqiu.zombieattack.view.activities;
 import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.MotionEvent;
 
 import com.jinqiu.zombieattack.R;
@@ -32,6 +33,8 @@ public class CreditMenu extends Menu<CreditMenu.ViewComponentTypes> {
 				new Button(R.drawable.pause_menu_return_main_menu_button,
 						R.drawable.pause_menu_return_main_menu_button_down,
 						new PointF(427, 442)));
+
+        setBlackBackground();
 	}
 
 	@Override
